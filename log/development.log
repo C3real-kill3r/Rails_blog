@@ -1526,3 +1526,882 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for ::1 at 2019-05-30 19:32:41 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brianryb/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 245ms (Views: 237.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 19:32:58 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 19:32:59 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateComments (20190530171338)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190530171338_create_comments.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190530171338_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190530171338"]]
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddPostIdToComments (20190530172031)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "comments" ADD "post_id" integer[0m
+  ↳ db/migrate/20190530172031_add_post_id_to_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190530172031"]]
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brianryb/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/posts/6" for ::1 at 2019-05-30 20:27:05 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brianryb/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered posts/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 1491ms (Views: 1473.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/6" for ::1 at 2019-05-30 20:27:06 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 20:27:10 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/5" for ::1 at 2019-05-30 20:27:12 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered posts/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/6" for ::1 at 2019-05-30 20:27:16 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered posts/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2019-05-30 20:27:54 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered posts/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 49ms (Views: 41.2ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/posts/6" for ::1 at 2019-05-30 20:27:57 +0300
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nJfUfhIcT+tBJQO2niLHXv0gP8p7adHEDnp9qNCtNsee+DjO5cnhLvxx0Y2xPaIW3kgy8eVZztdjDS7nzZ5P6A==", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mPost Destroy (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 7ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/posts" for ::1 at 2019-05-30 20:27:57 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5" for ::1 at 2019-05-30 20:27:58 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered posts/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/posts/5" for ::1 at 2019-05-30 20:28:01 +0300
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vjyYWRadsvsfUWLGv8ifBFB34a1ApiVAoOBiFdXSMjO8U3Tp4UgcPqIFsP2Q1/pMcx/slt6WOlPNlzFayOFLHA==", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts" for ::1 at 2019-05-30 20:28:01 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3" for ::1 at 2019-05-30 20:28:02 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered posts/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 61ms (Views: 57.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/posts/3" for ::1 at 2019-05-30 20:28:05 +0300
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sHzMJp/qP20ytAnuhTHHqtEJK8bhOJP4ASUElZr3ImOyEyCWaD+RqI/g29WqLqLi8mEm/X8IjOtsUlfah8RbTA==", "id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for ::1 at 2019-05-30 20:28:05 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2019-05-30 20:31:59 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-05-30 20:32:00 +0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (48.6ms)
+  Rendered posts/new.html.erb within layouts/application (50.5ms)
+Completed 200 OK in 67ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-05-30 20:32:09 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KJF0qMIwOh0/7Td3znQqxM7WolH19A6OS+BG+ESnHboUYX6ben4OZgOiy8mkV3XiIfjBqY/Lt1tm9hextL1bSQ==", "post"=>{"title"=>"test", "content"=>"app\r\nbin\r\nGemfile.lock\r\npublic\r\nGemfile\r\ndb\r\nconfig.ru\r\nconfig\r\nGuardfile\r\nRakefile\r\nlib\r\nlog\r\npackage.json\r\ntest\r\nstorage\r\nREADME.md\r\ntmp"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Create (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["content", "app\r\nbin\r\nGemfile.lock\r\npublic\r\nGemfile\r\ndb\r\nconfig.ru\r\nconfig\r\nGuardfile\r\nRakefile\r\nlib\r\nlog\r\npackage.json\r\ntest\r\nstorage\r\nREADME.md\r\ntmp"], ["created_at", "2019-05-30 17:32:09.948357"], ["updated_at", "2019-05-30 17:32:09.948357"]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:14
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/posts/7" for ::1 at 2019-05-30 20:32:09 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+
+ActionView::MissingTemplate - Missing partial comments/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/brianryb/Desktop/blog/Rails_blog/app/views"
+:
+  app/views/posts/show.html.erb:35:in `_app_views_posts_show_html_erb__16746449158107832_70091911271700'
+
+Started POST "/__better_errors/80642e2fba08b627/variables" for ::1 at 2019-05-30 20:32:10 +0300
+Started GET "/posts/7" for ::1 at 2019-05-30 20:35:58 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (162.8ms)
+  Rendered posts/show.html.erb within layouts/application (165.4ms)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.6ms)
+
+
+
+NoMethodError - undefined method `post_comments_path' for #<#<Class:0x00007f7f1b049560>:0x00007f7f173e2e78>
+Did you mean?  posts_path:
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__1152897960420318176_70091913827760'
+  app/views/posts/show.html.erb:35:in `_app_views_posts_show_html_erb__16746449158107832_70091913763680'
+
+Started POST "/__better_errors/789be0b1ba54290b/variables" for ::1 at 2019-05-30 20:35:58 +0300
+Started GET "/posts/7" for ::1 at 2019-05-30 20:37:42 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brianryb/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (25.6ms)
+  Rendered posts/show.html.erb within layouts/application (35.7ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.6ms)
+
+
+
+NoMethodError - undefined method `comment' for #<Comment:0x00007fbeace39aa0>
+Did you mean?  content:
+  app/views/comments/_form.html.erb:9:in `block in _app_views_comments__form_html_erb__4039405978449618165_70228487102480'
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__4039405978449618165_70228487102480'
+  app/views/posts/show.html.erb:35:in `_app_views_posts_show_html_erb__2288132706700528762_70228463044500'
+
+Started POST "/__better_errors/e0ca0cc56ee25462/variables" for ::1 at 2019-05-30 20:37:42 +0300
+Started POST "/__better_errors/e0ca0cc56ee25462/variables" for ::1 at 2019-05-30 20:39:37 +0300
+Started POST "/__better_errors/e0ca0cc56ee25462/variables" for ::1 at 2019-05-30 20:39:38 +0300
+Started POST "/posts" for ::1 at 2019-05-30 20:44:16 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/brianryb/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWkxY2roD0OeYaXnSQ94lJbe1g3Nqofgqg3dDqyFfbVvBt3TnT2hhiM1d9xmEB3ctbbbNlOamPPHeo5BsbYEmg==", "post"=>{"title"=>"test", "content"=>"app\r\nbin\r\nGemfile.lock\r\npublic\r\nGemfile\r\ndb\r\nconfig.ru\r\nconfig\r\nGuardfile\r\nRakefile\r\nlib\r\nlog\r\npackage.json\r\ntest\r\nstorage\r\nREADME.md\r\ntmp"}, "commit"=>"Create Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["content", "app\r\nbin\r\nGemfile.lock\r\npublic\r\nGemfile\r\ndb\r\nconfig.ru\r\nconfig\r\nGuardfile\r\nRakefile\r\nlib\r\nlog\r\npackage.json\r\ntest\r\nstorage\r\nREADME.md\r\ntmp"], ["created_at", "2019-05-30 17:44:16.483197"], ["updated_at", "2019-05-30 17:44:16.483197"]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:14
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 17ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/posts/8" for ::1 at 2019-05-30 20:44:16 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (21.8ms)
+  Rendered posts/show.html.erb within layouts/application (29.9ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `comment' for #<Comment:0x00007fcc3cf9f488>
+Did you mean?  content:
+  app/views/comments/_form.html.erb:9:in `block in _app_views_comments__form_html_erb___4078850104530957251_70257596435700'
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb___4078850104530957251_70257596435700'
+  app/views/posts/show.html.erb:35:in `_app_views_posts_show_html_erb__2867922437196858570_70257586386780'
+
+Started POST "/__better_errors/d537a532c332cf4e/variables" for ::1 at 2019-05-30 20:44:16 +0300
+Started GET "/posts" for ::1 at 2019-05-30 20:44:23 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 323ms (Views: 320.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 20:44:25 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-05-30 20:44:27 +0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (9.3ms)
+  Rendered posts/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-05-30 20:44:39 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jQlcEHxYTnnV1GYqFhq9sN/n3SsWNrrrHm40cxwYfwmx+VYjxBZ6AumbmpR8OeKWMMm+02wJAz4zeGU67AI5+g==", "post"=>{"title"=>"Test", "content"=>"Blah blah blah"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Test"], ["content", "Blah blah blah"], ["created_at", "2019-05-30 17:44:39.819027"], ["updated_at", "2019-05-30 17:44:39.819027"]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:14
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 10ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/posts/9" for ::1 at 2019-05-30 20:44:39 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (10.8ms)
+  Rendered posts/show.html.erb within layouts/application (14.5ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `comment' for #<Comment:0x00007fcc4301a588>
+Did you mean?  content:
+  app/views/comments/_form.html.erb:9:in `block in _app_views_comments__form_html_erb___4078850104530957251_70257637098640'
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb___4078850104530957251_70257637098640'
+  app/views/posts/show.html.erb:35:in `_app_views_posts_show_html_erb__2867922437196858570_70257637067260'
+
+Started POST "/__better_errors/e318e8d6531b057d/variables" for ::1 at 2019-05-30 20:44:40 +0300
+Started GET "/posts/9" for ::1 at 2019-05-30 20:46:36 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (6.9ms)
+  Rendered posts/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 20:46:55 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0q7gg3VGj8lKfS6Ol8yePH6OQHIfNTtlI4QzxHPIpKbQwQwzgpMhDPcp/LW40/t0XeZNSYEFJHZO82CLbvvdiQ==", "comment"=>{"name"=>"Brybz", "content"=>"Never"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/comments_controller.rb:5:in `create'
+
+Started POST "/__better_errors/4eb29eb5c0bc42cd/variables" for ::1 at 2019-05-30 20:46:56 +0300
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 20:53:23 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0q7gg3VGj8lKfS6Ol8yePH6OQHIfNTtlI4QzxHPIpKbQwQwzgpMhDPcp/LW40/t0XeZNSYEFJHZO82CLbvvdiQ==", "comment"=>{"name"=>"Brybz", "content"=>"Never"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/comments_controller.rb:5:in `create'
+
+Started POST "/__better_errors/4940edd88888894c/variables" for ::1 at 2019-05-30 20:53:23 +0300
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 20:53:46 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0q7gg3VGj8lKfS6Ol8yePH6OQHIfNTtlI4QzxHPIpKbQwQwzgpMhDPcp/LW40/t0XeZNSYEFJHZO82CLbvvdiQ==", "comment"=>{"name"=>"Brybz", "content"=>"Never"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/comments_controller.rb:5:in `create'
+
+Started POST "/__better_errors/9e6b03572b77e7c2/variables" for ::1 at 2019-05-30 20:53:46 +0300
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 20:54:30 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0q7gg3VGj8lKfS6Ol8yePH6OQHIfNTtlI4QzxHPIpKbQwQwzgpMhDPcp/LW40/t0XeZNSYEFJHZO82CLbvvdiQ==", "comment"=>{"name"=>"Brybz", "content"=>"Never"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.2ms)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/comments_controller.rb:5:in `create'
+
+Started POST "/__better_errors/255588da05c46676/variables" for ::1 at 2019-05-30 20:54:30 +0300
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 20:55:35 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0q7gg3VGj8lKfS6Ol8yePH6OQHIfNTtlI4QzxHPIpKbQwQwzgpMhDPcp/LW40/t0XeZNSYEFJHZO82CLbvvdiQ==", "comment"=>{"name"=>"Brybz", "content"=>"Never"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/comments_controller.rb:5:in `create'
+
+Started POST "/__better_errors/9b5ced69954ec3b8/variables" for ::1 at 2019-05-30 20:55:35 +0300
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 20:58:34 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0q7gg3VGj8lKfS6Ol8yePH6OQHIfNTtlI4QzxHPIpKbQwQwzgpMhDPcp/LW40/t0XeZNSYEFJHZO82CLbvvdiQ==", "comment"=>{"name"=>"Brybz", "content"=>"Never"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/comments_controller.rb:5:in `create'
+
+Started POST "/__better_errors/0d52bae0c722d6fe/variables" for ::1 at 2019-05-30 20:58:34 +0300
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 21:00:16 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0q7gg3VGj8lKfS6Ol8yePH6OQHIfNTtlI4QzxHPIpKbQwQwzgpMhDPcp/LW40/t0XeZNSYEFJHZO82CLbvvdiQ==", "comment"=>{"name"=>"Brybz", "content"=>"Never"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("created_at", "updated_at", "post_id") VALUES (?, ?, ?)[0m  [["created_at", "2019-05-30 18:00:16.900485"], ["updated_at", "2019-05-30 18:00:16.900485"], ["post_id", 9]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.4ms)
+
+
+
+NoMethodError - undefined method `permit' for #<Comment:0x00007fcc42100430>
+Did you mean?  persisted?:
+  app/controllers/comments_controller.rb:5:in `create'
+
+Started POST "/__better_errors/2d5c8b496a899da7/variables" for ::1 at 2019-05-30 21:00:17 +0300
+Started GET "/posts/9" for ::1 at 2019-05-30 21:00:38 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [1 times] (1.0ms)
+  Rendered comments/_form.html.erb (6.1ms)
+  Rendered posts/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 102ms (Views: 87.2ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/posts/9/comments/1" for ::1 at 2019-05-30 21:00:43 +0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BER6Gyr9ICXOtjeYlPwvDpgchn/z8nQnzWlR7AbM6S0GK5ar3SiO4HPi5aO740pGu3SLRG3CazSgHgKjG/+QAg==", "post_id"=>"9", "id"=>"1"}
+No template found for CommentsController#destroy, rendering head :no_content
+Completed 204 No Content in 25ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 21:00:53 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BER6Gyr9ICXOtjeYlPwvDpgchn/z8nQnzWlR7AbM6S0GK5ar3SiO4HPi5aO740pGu3SLRG3CazSgHgKjG/+QAg==", "comment"=>{"name"=>"Brybz", "content"=>"hahahahaha"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/comments_controller.rb:5:in `create'
+
+Started POST "/__better_errors/9d13eac554212be2/variables" for ::1 at 2019-05-30 21:00:53 +0300
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 21:02:35 +0300
+
+SyntaxError - syntax error, unexpected ')', expecting end
+...ment]).permit(:name, :content))
+...                              ^:
+  app/controllers/comments_controller.rb:5:in `'
+
+Started POST "/__better_errors/79210447e5953401/variables" for ::1 at 2019-05-30 21:02:35 +0300
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 21:03:29 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BER6Gyr9ICXOtjeYlPwvDpgchn/z8nQnzWlR7AbM6S0GK5ar3SiO4HPi5aO740pGu3SLRG3CazSgHgKjG/+QAg==", "comment"=>{"name"=>"Brybz", "content"=>"hahahahaha"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("name", "content", "created_at", "updated_at", "post_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brybz"], ["content", "hahahahaha"], ["created_at", "2019-05-30 18:03:29.577262"], ["updated_at", "2019-05-30 18:03:29.577262"], ["post_id", 9]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 19ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/9" for ::1 at 2019-05-30 21:03:29 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [2 times] (1.3ms)
+  Rendered comments/_form.html.erb (5.4ms)
+  Rendered posts/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/posts/9/comments/1" for ::1 at 2019-05-30 21:03:35 +0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1Wepd2q53N0y0NRvlG76MqI0uy8ks+9kTonJ3kb3dgnXCEXHnWxyGI+EBlS7cZ96gVy2FLqD8Hcj/pqRW8QPJg==", "post_id"=>"9", "id"=>"1"}
+No template found for CommentsController#destroy, rendering head :no_content
+Completed 204 No Content in 27ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/posts/9/comments/2" for ::1 at 2019-05-30 21:03:43 +0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1Wepd2q53N0y0NRvlG76MqI0uy8ks+9kTonJ3kb3dgnXCEXHnWxyGI+EBlS7cZ96gVy2FLqD8Hcj/pqRW8QPJg==", "post_id"=>"9", "id"=>"2"}
+No template found for CommentsController#destroy, rendering head :no_content
+Completed 204 No Content in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/9" for ::1 at 2019-05-30 21:04:40 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [2 times] (1.3ms)
+  Rendered comments/_form.html.erb (7.3ms)
+  Rendered posts/show.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 50ms (Views: 37.1ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/posts/9/comments/1" for ::1 at 2019-05-30 21:04:43 +0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sCHyzGHe8Q/GexM9wXIF0gPK3/yNtBU8Hrp22qAJQU6yTh58lgtfynsvwQbubWCaIKLSxxOECi9zzSWVvTo4YQ==", "post_id"=>"9", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 9], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:12
+  [1m[36mComment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/comments_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:12
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/9" for ::1 at 2019-05-30 21:04:43 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [1 times] (0.5ms)
+  Rendered comments/_form.html.erb (5.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/9/comments" for ::1 at 2019-05-30 21:06:04 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LfaIjlPv4sdxMe4H43fiX6a5jM0YC8nYqOwRYX49THUvmWQ+pDpMAsxlPDzMaIcXhdGB9oY71svFm0IuYw41Wg==", "comment"=>{"name"=>"Cedric Zack", "content"=>"I don't know what to write"}, "commit"=>"Create Comment", "post_id"=>"9"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("name", "content", "created_at", "updated_at", "post_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cedric Zack"], ["content", "I don't know what to write"], ["created_at", "2019-05-30 18:06:04.621455"], ["updated_at", "2019-05-30 18:06:04.621455"], ["post_id", 9]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/9" for ::1 at 2019-05-30 21:06:04 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [2 times] (1.5ms)
+  Rendered comments/_form.html.erb (8.8ms)
+  Rendered posts/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 21:06:37 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/8" for ::1 at 2019-05-30 21:06:40 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (9.4ms)
+  Rendered posts/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 21:06:44 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/9" for ::1 at 2019-05-30 21:06:45 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [2 times] (1.9ms)
+  Rendered comments/_form.html.erb (7.1ms)
+  Rendered posts/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 43ms (Views: 38.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 21:14:07 +0300
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting end
+...  before_action :find_post only: [:show, :update, :edit, :de...
+...                           ^~~~:
+  app/controllers/posts_controller.rb:3:in `'
+
+Started POST "/__better_errors/d61a3bf61adc25f1/variables" for ::1 at 2019-05-30 21:14:07 +0300
+Started GET "/" for ::1 at 2019-05-30 21:14:34 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/9" for ::1 at 2019-05-30 21:14:39 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:51
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [2 times] (0.7ms)
+  Rendered comments/_form.html.erb (3.8ms)
+  Rendered posts/show.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/8" for ::1 at 2019-05-30 21:14:44 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:51
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (7.6ms)
+  Rendered posts/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts/8/comments" for ::1 at 2019-05-30 21:14:56 +0300
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/aNOflMtjYRR6tiS2JF3ejqK7JYRncJYvZztxZ9Hh4SXEaP9sWFcwrbIRAh+xvHT3MkzEZYg0m1cFvDOpwXVtA==", "comment"=>{"name"=>"Cedric Zack", "content"=>"hahahahahahahahahahahahahahahahahahahahhahahahaha"}, "commit"=>"Create Comment", "post_id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("name", "content", "created_at", "updated_at", "post_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cedric Zack"], ["content", "hahahahahahahahahahahahahahahahahahahahhahahahaha"], ["created_at", "2019-05-30 18:14:56.603074"], ["updated_at", "2019-05-30 18:14:56.603074"], ["post_id", 8]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/8" for ::1 at 2019-05-30 21:14:56 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:51
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [1 times] (0.8ms)
+  Rendered comments/_form.html.erb (6.9ms)
+  Rendered posts/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 21:15:17 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/8" for ::1 at 2019-05-30 22:12:00 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:51
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:30
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/views/posts/show.html.erb:31
+  Rendered collection of comments/_comment.html.erb [1 times] (1.5ms)
+  Rendered comments/_form.html.erb (8.7ms)
+  Rendered posts/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 74ms (Views: 69.3ms | ActiveRecord: 1.8ms)
+
+
